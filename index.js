@@ -7,7 +7,8 @@ app.get("/",(req,res)=>{
 
 app.get("/about",(req,res)=>{
 
-    res.render("<h1>About Page</h1>");
+    res.send("<h1>About Page</h1>");
+
 })
 
 
