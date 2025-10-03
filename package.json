@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
+  "type":"commonjs",
   "scripts": {
     "start": "npx kill-port 3000 && node index.js",
     "serve": "npx kill-port 3000 && nodemon index.js"

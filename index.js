@@ -1,8 +1,9 @@
 const express=require('express');
 const app=express();
 const mongoose=require('mongoose');
+const Product = require('./models/product.model.js'); // <-- use require
 
-
+app.use(express.json());//to parse json data
 
 app.get("/",(req,res)=>{
     res.send("Hello World");
@@ -14,7 +15,21 @@ app.get("/about",(req,res)=>{
 
 })
 
-mongoose.connect("mongodb+srv://admin:Ru7AX9BsQcytdrf4@cluster0.sy0jyov.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0").then(()=>{
+app.post("/api/products", async (req, res) => {
+    try {
+        const product = await Product.create(req.body);
+        res.status(200).json(product);
+    } catch (error) {
+        res.status(400).json({ error: error.message });
+    }
+});
+//connect to mongodb
+
+
+
+
+
+mongoose.connect("mongodb+srv://admin:gplEmrfaT5A2hY9k@cluster0.jjd91os.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0").then(()=>{
     console.log("Connected to MongoDB");
     app.listen(3000);
     console.log("http://localhost:3000/");
