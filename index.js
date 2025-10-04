@@ -9,11 +9,6 @@ app.get("/",(req,res)=>{
     res.send("Hello World");
 })
 
-app.get("/about",(req,res)=>{
-
-    res.send("<h1>About Page</h1>");
-
-})
 
 app.post("/api/products", async (req, res) => {
     try {
