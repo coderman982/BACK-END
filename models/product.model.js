@@ -6,6 +6,6 @@ const productschema = new mongoose.Schema({
     image: { type: String }
 }, { timestamps: true }); // timestamps will automatically add createdAt and updatedAt
 
-const Product = mongoose.model("Product", productschema);
+const Product = mongoose.model("Product", productschema);// create a model named Product using the productschema
 
 module.exports = Product;
