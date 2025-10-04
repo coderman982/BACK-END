@@ -34,7 +34,7 @@ mongoose.connect("mongodb+srv://admin:gplEmrfaT5A2hY9k@cluster0.jjd91os.mongodb.
     app.listen(3000);
     console.log("http://localhost:3000/");
 }).catch((err)=>{
-    console.log("Error connecting to MongoDB do ag",err);
+    console.log("Error connecting to MongoDB do",err);
 });
 
 //nodemon is used to automatically restart the server when file changes in the directory are detected.
