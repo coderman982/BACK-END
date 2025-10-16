@@ -38,4 +38,3 @@ mongoose.connect("mongodb+srv://admin:gplEmrfaT5A2hY9k@cluster0.jjd91os.mongodb.
 //To run the server using nodemon use the command nodemon index.js
 
 
-app.post("/ap/pr",async(req,res)=>{
