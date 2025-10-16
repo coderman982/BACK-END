@@ -36,3 +36,9 @@ mongoose.connect("mongodb+srv://admin:gplEmrfaT5A2hY9k@cluster0.jjd91os.mongodb.
 //nodemon is used to automatically restart the server when file changes in the directory are detected.
 //To install nodemon use the command npm install -g nodemon
 //To run the server using nodemon use the command nodemon index.js
+
+
+app.post("/ap/pr",async(req,res)=>{
+    const product=new Product(req.body);
+    await product.save();
+    res.status(201).send(product);
