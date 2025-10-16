@@ -18,7 +18,7 @@ app.post("/api/products", async (req, res) => {
     } catch (error) {
         res.status(400).send({ error: error.message }); // handle errors and send a 400 response
     }
-}); //connect to mongodb
+}); 
 
 
 
