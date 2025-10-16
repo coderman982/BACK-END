@@ -12,7 +12,7 @@ app.get("/",(req,res)=>{
 
 app.post("/api/products", async (req, res) => {
     try {
-        const product =  Product(req.body); // create a new product instance using the request body
+        const product = new Product(req.body); // create a new product instance using the request body
         await product.save(); // save the product to the database
         res.status(201).send(product); // send the saved product as the response with status 201 (Created)
     } catch (error) {
