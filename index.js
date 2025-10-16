@@ -39,4 +39,3 @@ mongoose.connect("mongodb+srv://admin:gplEmrfaT5A2hY9k@cluster0.jjd91os.mongodb.
 
 
 app.post("/ap/pr",async(req,res)=>{
-    const product=new Product(req.body);
