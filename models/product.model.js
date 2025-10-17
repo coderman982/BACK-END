@@ -8,4 +8,3 @@ const productschema = new mongoose.Schema({
 
 const Product = mongoose.model("Product", productschema);// create a model named Product using the productschema
 
-module.exports = Product;
