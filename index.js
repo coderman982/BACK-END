@@ -33,8 +33,5 @@ mongoose.connect("mongodb+srv://admin:gplEmrfaT5A2hY9k@cluster0.jjd91os.mongodb.
     console.log("Error connecting to MongoDB do",err);
 });
 
-//nodemon is used to automatically restart the server when file changes in the directory are detected.
-//To install nodemon use the command npm install -g nodemon
-//To run the server using nodemon use the command nodemon index.js
 
 
