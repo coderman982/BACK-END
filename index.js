@@ -29,6 +29,9 @@ app.get("/api/products/:id", async(req,res)=>{
         res.status(200).send(product); // send the found product as the response with status 200 (OK)
     }
 
+    catch(error){
+        res.status(400).send({error:error.message}); // handle errors and send a 400 response
+
     
 }
 )
