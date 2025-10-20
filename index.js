@@ -56,6 +56,22 @@ app.put("/api/products/:id",async(req,res)=>{
 //just write after post /api/products/:id eg: /api/products/64a7f2c5e1b2c3d4e5f6a7b8 then your updated fields in json
 
 
+//delete a product by id from api, you will use delete to delete specific data from the api
+app.delete("/api/products/:id",async(req,res)=>{
+    try{
+        const id=req.params; // get the id from the request parameters
+        const product= await Product.findByIdAndDelete(id); // find the product by id and delete it
+        if(!product){
+            return res.status(404).send({error:"Product not found"}); // if product not found, send 404 response
+           }
+           res.status(200).send({message:"Product deleted successfully"}); // send success message with status 200 (OK)
+    }
+
+    catch(error){
+        res.status(400).send({error:error.message}); // handle errors and send a 400 response
+}
+})
+
 mongoose.connect("mongodb+srv://admin:gplEmrfaT5A2hY9k@cluster0.jjd91os.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0").then(()=>{
     console.log("Connected to MongoDB");
     app.listen(3000);
