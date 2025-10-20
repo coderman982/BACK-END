@@ -24,9 +24,14 @@ app.post("/api/products", async (req, res) => {
 
 app.get("/api/products/:id", async(req,res)=>{
     try{
-        const id=req.params;
+        const id=req.params;// get the id from the request parameters it is for accessing a specific product by id 
+        const product=await Product.findById(id); // find the product by id
+        res.status(200).send(product); // send the found product as the response with status 200 (OK)
     }
-})
+
+    
+}
+)
 
 
 
