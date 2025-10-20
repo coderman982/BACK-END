@@ -39,7 +39,8 @@ app.get("/api/products/:id", async(req,res)=>{
 //update a product by id from api, you will use put to update specific data from the api
 app.put("/api/products/:id",async(req,res)=>{
     try{
-
+       const id=req.params; // get the id from the request parameters
+       const product= await Product.findByIdAndUpdate(id,req.body); // find the product by id and update it with the request body, return the updated document
     }
 })
 
