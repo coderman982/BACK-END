@@ -36,6 +36,12 @@ app.get("/api/products/:id", async(req,res)=>{
 }
 )
 
+//update a product by id from api, you will use put to update specific data from the api
+app.put("/api/products/:id",async(req,res)=>{
+    try{
+
+    }
+})
 
 
 mongoose.connect("mongodb+srv://admin:gplEmrfaT5A2hY9k@cluster0.jjd91os.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0").then(()=>{
