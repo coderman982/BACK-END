@@ -41,7 +41,14 @@ app.put("/api/products/:id",async(req,res)=>{
     try{
        const id=req.params; // get the id from the request parameters
        const product= await Product.findByIdAndUpdate(id,req.body); // find the product by id and update it with the request body, return the updated document
+       if(!product){
+        return res.status(404).send({error:"Product not found"}); // if product not found, send 404 response
+       }
     }
+
+    catch(error){
+        res.status(400).send({error:error.message}); // handle errors and send a 400 response
+}
 })
 
 
