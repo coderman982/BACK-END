@@ -21,7 +21,7 @@ app.post("/api/products", async (req, res) => {
     }
 }); 
 
-//by id from api, use get to read specific data from the api
+// to read specific data from the api
 app.get("/api/products/:id", async(req,res)=>{
     try{
         const id=req.params;// get the id from the request parameters it is for accessing a specific product by id 
