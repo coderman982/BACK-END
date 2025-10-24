@@ -14,7 +14,7 @@ app.get('/',  (req, res) => {
 
 
 app.get('/about', middle2, (req, res) => {
-  res.send('About Page');});//first middleware function will be executed here then when we go to /about route second middleware function will be executed
+  res.send(`FUNCTION OF LOGGED ${loggedIn}`);});//first middleware function will be executed here then when we go to /about route second middleware function will be executed
          //then /about route handler will be executed
 
 
@@ -28,6 +28,16 @@ function middle2(req,res,next) {
   console.log('This is another middleware function');
   next();
 }
+
+function auth(req,res,next) {
+  const loggedIn = true; // This is just a placeholder. In real applications, you would check the user's authentication status.
+  if (req.params.loggedIn) {
+    next();
+  } else {
+    res.status(401).send('Unauthorized');
+  }   
+}
+
 
 app.listen(3000, () => {
   console.log('Server is running on port 3000');
