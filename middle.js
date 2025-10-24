@@ -30,8 +30,8 @@ function middle2(req,res,next) {
 }
 
 function auth(req,res,next) {
-  const loggedIn = true; // This is just a placeholder. In real applications, you would check the user's authentication status.
-  if (req.params.loggedIn) {
+  const req.loggedIn = true; // This is just a placeholder. In real applications, you would check the user's authentication status.
+  if (req.query.loggedIn === 'true') {
     next();
   } else {
     res.status(401).send('Unauthorized');
