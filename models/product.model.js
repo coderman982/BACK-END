@@ -8,4 +8,8 @@ const productschema = new mongoose.Schema({
 
 const Product = mongoose.model("Product", productschema);// create a model named Product using the productschema
 
+productschema.query.byName = function(name) {
+    return this.where({ name: new RegExp(name, 'i') }); // 'i' for case-insensitive
+};
+
 module.exports = Product;
