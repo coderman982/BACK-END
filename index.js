@@ -14,7 +14,9 @@ app.get("/",(req,res)=>{
 app.post("/api/products", async (req, res) => {
     try {
         const product = new Product(req.body); // create a new product instance using the request body
-        await product.save(); // save the product to the database
+        await product.save();
+         // save the product to the database
+         console.log(product.byName);
         res.status(201).send(product); // send the saved product as the response with status 201 (Created) by json
     } catch (error) {
         res.status(400).send({ error: error.message }); // handle errors and send a 400 response
