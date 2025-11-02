@@ -6,6 +6,12 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
 app.use(middle);// Apply middle middleware globally
+//No — calling next() inside one middleware does not automatically call any other middleware unless that other middleware is registered in the middleware/route chain.
+
+//// register globally (middle2 will run after middle)
+app.use(middle);
+app.use(middle2);
+
 
 app.get('/',  (req, res) => {
   res.send('Hello World!');
