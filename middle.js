@@ -5,13 +5,13 @@ const app = express();
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
-app.use(middle);
+app.use(middle);// Apply middle middleware globally
 
 app.get('/',  (req, res) => {
   res.send('Hello World!');
 });
 
-app.get('/dashboard', auth, (req, res) => {
+app.get('/dashboard', auth, (req, res) => {//use auth middlewarwe here locally
   res.send('Welcome to your dashboard!');})
 
 
@@ -28,7 +28,7 @@ function middle2(req,res,next) {
 
 function auth(req,res,next) {
   // This is just a placeholder. In real applications, you would check the user's authentication status.
-  creq.loggedIn ='true';
+  req.loggedIn ='true';
   if (req.query.loggedIn=='true') {
     next();// User is authenticated, proceed to the next middleware or route handler
   } else {
