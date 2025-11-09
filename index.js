@@ -6,9 +6,6 @@ const Product = require('./models/product.model.js'); // <-- use require
 app.use(express.json());//to parse json data
 
 
-app.get("/",(req,res)=>{
-    res.send("Hello World");
-})
 
 
 app.post("/api/products", async (req, res) => {
