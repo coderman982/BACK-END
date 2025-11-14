@@ -53,6 +53,7 @@ app.put("/api/products/:id",async(req,res)=>{
         res.status(400).send({error:error.message}); // handle errors and send a 400 response
 }
 })
+//now when you "put field in insomnia" a product by id, it will update the product in the database when you write field and its value like 
 
 //{"name":"new product name", "price":100, "image":"new image url"} now put send and when you get id again it will show updated values  
 //just write after put  /api/products/:id eg: /api/products/64a7f2c5e1b2c3d4e5f6a7b8 then your fiels will be updated in json
