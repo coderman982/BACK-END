@@ -58,7 +58,7 @@ app.put("/api/products/:id",async(req,res)=>{
 //{"name":"new product name", "price":100, "image":"new image url"} now put send and when you get id again it will show updated values  
 //just write after put  /api/products/:id eg: /api/products/64a7f2c5e1b2c3d4e5f6a7b8 then your fiels will be updated in json
 
-
+//
 //delete a product by id from api, you will use delete to delete specific data from the api
 app.delete("/api/products/:id",async(req,res)=>{
     try{
